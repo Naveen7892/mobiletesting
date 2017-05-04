@@ -1,0 +1,5 @@
+<!-- new page -->
+<script src="app/new/new.routes.js"></script>
+<script src="app/new/new.module.js"></script>
+<script src="app/new/new.controllers.js"></script>
+<script src="app/new/new.services.js"></script>

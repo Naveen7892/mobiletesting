@@ -1,0 +1,48 @@
+<ion-view title="Datatable Demo">
+    <ion-nav-bar class="bar bar-positive">        
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-content>
+        <ion-scroll direction="x" style="width: 100%" scrollbar-x="false" delegate-handle="head" zooming="true" on-scroll="scrollMirror('head', 'list')">
+            <div class="item item-header item-positive row row-item min-705">
+            <div class="col col-left col-20 min-180" ng-click="sort('descricao')">Estabelecimento</div>
+            <div class="col col-right min-75" ng-click="sort('valorLiquido')">Líquido (R$)</div>
+            <div class="col col-right min-75" ng-click="sort('valorBruto')">Bruto (R$)</div>
+            <div class="col col-right min-75" ng-click="sort('valorDesconto')">Desc. (R$)</div>
+            <div class="col col-right min-50" ng-click="sort('vendas')">Tickets</div>
+            <div class="col col-right min-50" ng-click="sort('ticketMedio')">T.M.</div>
+            <div class="col col-right min-50" ng-click="sort('quantidade')">Peças</div>
+            <div class="col col-right min-50" ng-click="sort('quantidadeMedia')">P.A.</div>
+            <div class="col col-right min-50" ng-click="sort('precoMedio')">P.M.V.</div>
+            <div class="col col-right min-50" ng-click="sort('markup')">Mkp(%)</div>
+            </div>
+        </ion-scroll>
+        <ion-scroll direction="xy" style="height: 100%" zooming="true" on-scroll="scrollMirror('list', 'head')" delegate-handle="list">
+            <div class="item row row-item min-705" ng-repeat="row in data | orderBy:predicate:desc">
+            <div class="col col-left col-20 min-180">{{ row.descricao }}</div>
+            <div class="col col-right col-sep min-75">{{ row.valorLiquido | number: 2 }}</div>
+            <div class="col col-right col-sep min-75">{{ row.valorBruto | number: 2 }}</div>
+            <div class="col col-right col-sep min-75">{{ row.valorDesconto | number: 2 }}</div>
+            <div class="col col-right col-sep min-50">{{ row.vendas | number: 0 }}</div>
+            <div class="col col-right col-sep min-50">{{ row.ticketMedio | number: 2 }}</div>
+            <div class="col col-right col-sep min-50">{{ row.quantidade | number: 0 }}</div>
+            <div class="col col-right col-sep min-50">{{ row.quantidadeMedia | number: 2 }}</div>
+            <div class="col col-right col-sep min-50">{{ row.precoMedio | number: 2 }}</div>
+            <div class="col col-right col-sep min-50">{{ row.markup | number: 2 }}</div>
+            </div>
+            <div class="item item-footer item-positive row row-item min-705">
+            <div class="col col-left col-20 min-180"></div>
+            <div class="col col-right min-75">{{ sum.valorLiquido | number: 2 }}</div>
+            <div class="col col-right min-75">{{ sum.valorBruto | number: 2 }}</div>
+            <div class="col col-right min-75">{{ sum.valorDesconto | number: 2 }}</div>
+            <div class="col col-right min-50">{{ sum.vendas | number: 0 }}</div>
+            <div class="col col-right min-50">{{ sum.ticketMedio | number: 2 }}</div>
+            <div class="col col-right min-50">{{ sum.quantidade | number: 0 }}</div>
+            <div class="col col-right min-50">{{ sum.quantidadeMedia | number: 2 }}</div>
+            <div class="col col-right min-50">{{ sum.precoMedio | number: 2 }}</div>
+            <div class="col col-right min-50">{{ sum.markup | number: 2 }}</div>
+            </div>
+        </ion-scroll>
+    </ion-content>
+</ion-view>

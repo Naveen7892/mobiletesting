@@ -5,7 +5,8 @@
   angular.module('testing', [
     'ionic',
     'testing.sidemenu',
-    'testing.home'
+    'testing.home',
+    'testing.datatable'
   ]);
 
 })();
