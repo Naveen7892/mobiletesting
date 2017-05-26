@@ -22,6 +22,7 @@
                 StatusBar.styleDefault();
             }
 
+            // Invoke startup function
             startupFactory.initialize();
         });
     }

@@ -9,11 +9,22 @@
 
     <ion-content>
         <ion-list>
-            <ion-item>
-                <a  ui-sref="testing.datatable">
-                Data table
-                </a>
-            </ion-item>
+            <div class="item row" ui-sref="testing.datatable">
+                <div class="col col-90">
+                    Data table
+                </div>
+                <div class="col col-10">
+                    <i class="ion-chevron-right"></i>
+                </div>
+            </div>
+            <div class="item row" ui-sref="testing.barcode">
+                <div class="col col-90">
+                    Barcode
+                </div>
+                <div class="col col-10">
+                    <i class="ion-chevron-right"></i>
+                </div>
+            </div>
         </ion-list>
     </ion-content>
 </ion-view>

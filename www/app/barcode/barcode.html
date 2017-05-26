@@ -1,0 +1,15 @@
+<ion-view title="Barcode">
+    <ion-nav-bar class="bar bar-positive">        
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear" ng-click="bc.readBarcode();">
+            <i class="ion-ios-barcode"></i>
+        </button>
+    </ion-nav-buttons>
+	
+    <ion-content>
+        {{ bc.barcodeData }}
+    </ion-content>
+</ion-view>

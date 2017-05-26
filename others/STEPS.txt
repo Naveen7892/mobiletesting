@@ -1,0 +1,115 @@
+Updates:
+
+>>npm update -g cordova
+>>npm update -g ionic
+
+Command Line Tools:
+
+npm: 4.1.1
+node: 4.4.7
+cordova: 6.1.1 -> 6.5.0
+ionic: 2.1.0 -> 2.2.1
+bower: 1.7.9
+
+Tools:
+
+Visual Studio Code: 1.8.1
+Android studio: 2.1.1
+
+================================================
+
+1. Extract ionic-app-base-master.zip and change folder name to project name
+2. Extract ionic-starter-blank-master.zip and copy the contents and paste it in above project folder and click ok replace.
+3. Create ionic.config.json
+4. Provide and edit information about project in bower.json, config.xml, package.json, ionic.config.json
+
+sample: 
+ionic.config.json:
+
+{
+	name: "Project Name"
+}
+
+package.json: (same as ionic.config.json)
+	- but doesn't allow uppercase and spaces for project name
+
+bower.json: (same as ionic.config.json)
+
+config.xml:
+	<widget id="com.naveentere7.mobiletesting" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+	<name>Mobile Plugins</name>
+	<description>
+		An application to demonstrate the mobile plugins provided by ngCordova.
+	</description>
+	<author email="naveentere7@outlook.com" href="http://outlook.com">
+	  Naveen Kumar V
+	</author>
+	<content src="index.html"/>
+	<access origin="*"/>
+    
+	(modify preferences, plugin required to work) 
+	<preference name="SplashScreen" value="splash"/>
+	
+	(add these preferences)
+	<preference name="FadeSplashScreen" value="true" />
+	<preference name="ShowSplashScreenSpinner" value="false" />
+	<preference name="SplashShowOnlyFirstTime" value="false" />
+	<preference name="AutoHideSplashScreen" value="false" />
+	
+5. Install cordova plugins and save to config.xml
+
+	Default:
+	>>ionic plugin add cordova-plugin-device --save
+	>>ionic plugin add cordova-plugin-console --save
+	>>ionic plugin add cordova-plugin-whitelist --save
+		This plugin is only applicable for versions of cordova-android greater than 4.0. If you have a previous platform version, you do *not* need this plugin since the whitelist will be built in.
+	>>ionic plugin add cordova-plugin-statusbar --save
+	>>ionic plugin add cordova-plugin-splashscreen --save
+	>>ionic plugin add ionic-plugin-keyboard --save
+	
+	Others sample:
+	>>ionic plugin add cordova-plugin-file --save
+	>>ionic plugin add cordova-plugin-vibration --save
+	>>ionic plugin add https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git --save
+	>>ionic plugin add https://github.com/litehelpers/Cordova-sqlite-storage.git --save
+	>>ionic plugin add https://github.com/phonegap/phonegap-plugin-barcodescanner.git --save
+
+6. Install ngCordova
+	>> bower install ngCordova --save
+	
+	[installs angular, angular-sanitizer, angular-animate, angular-ui-router and ngCordova in www/lib (mentioned in .bowerrc)]
+	
+	index.html
+		- insert <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+		- before <script src="cordova.js"></script>
+		- angular.module('myApp', ['ngCordova'])
+	
+	run after device ready
+	$ionicPlatform.ready(function() {
+	  $cordovaPlugin.someFunction().then(success, error);
+	});
+
+7. Add android platform 
+	(with internet)
+	>> ionic platform add android --save
+	
+8. Add icon.png(w2520xh2520) and splash.png(w3200xh3200) in resources folder and generate resources
+
+	>> ionic resources android [/ios]
+	
+9. Build android platform
+	
+	>> ionic build android
+
+10. Create templates and js files
+
+11. Provide dummy/development mode info in app
+
+12. Backup plugin and platform information to package.json
+
+	>> ionic state save
+
+13. Download animate.css
+	
+	source: https://daneden.github.io/animate.css/
+	paste it in: www/css/

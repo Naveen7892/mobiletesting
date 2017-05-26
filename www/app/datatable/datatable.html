@@ -1,11 +1,11 @@
 <ion-view title="Datatable Demo">
-    <ion-nav-bar class="bar bar-positive">        
+    <ion-nav-bar class="bar bar-calm">        
         <ion-nav-back-button></ion-nav-back-button>
     </ion-nav-bar>
 
     <ion-content>
         <ion-scroll direction="x" style="width: 100%" scrollbar-x="false" delegate-handle="head" zooming="true" on-scroll="scrollMirror('head', 'list')">
-            <div class="item item-header item-positive row row-item min-705">
+            <div class="item item-header item-energized row row-item min-705">
             <div class="col col-left col-20 min-180" ng-click="sort('descricao')">Estabelecimento</div>
             <div class="col col-right min-75" ng-click="sort('valorLiquido')">Líquido (R$)</div>
             <div class="col col-right min-75" ng-click="sort('valorBruto')">Bruto (R$)</div>
@@ -31,7 +31,7 @@
             <div class="col col-right col-sep min-50">{{ row.precoMedio | number: 2 }}</div>
             <div class="col col-right col-sep min-50">{{ row.markup | number: 2 }}</div>
             </div>
-            <div class="item item-footer item-positive row row-item min-705">
+            <div class="item item-footer item-energized row row-item min-705">
             <div class="col col-left col-20 min-180"></div>
             <div class="col col-right min-75">{{ sum.valorLiquido | number: 2 }}</div>
             <div class="col col-right min-75">{{ sum.valorBruto | number: 2 }}</div>

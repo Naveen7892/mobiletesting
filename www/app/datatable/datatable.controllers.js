@@ -9,7 +9,7 @@
     DatatableController.inject = ['$scope', '$ionicScrollDelegate'];
     function DatatableController($scope, $ionicScrollDelegate) {
         var vm = this;
-
+        
         activate();
 
         ////////////////

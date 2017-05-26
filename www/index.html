@@ -26,6 +26,8 @@
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
@@ -35,6 +37,9 @@
     <script src="app/app.run.js"></script>
     <script src="app/app.controllers.js"></script>
     <script src="app/app.services.js"></script>
+
+    <!-- Directives and Filters -->
+    <script src="app/directives/directives.js"></script>
 
     <!-- home page -->
     <script src="app/sidemenu/sidemenu.routes.js"></script>
@@ -48,12 +53,25 @@
     <script src="app/home/home.controllers.js"></script>
     <script src="app/home/home.services.js"></script>
 
-    <!-- new page -->
+    <!-- aboutus page -->
+    <script src="app/aboutus/aboutus.module.js"></script>
+    <script src="app/aboutus/aboutus.controllers.js"></script>
+    <script src="app/aboutus/aboutus.routes.js"></script>
+    <script src="app/aboutus/aboutus.services.js"></script>
+
+    <!-- datatable page -->
     <script src="app/datatable/datatable.module.js"></script>
     <script src="app/datatable/datatable.controllers.js"></script>
     <script src="app/datatable/datatable.routes.js"></script>
     <script src="app/datatable/datatable.services.js"></script>
-    <link href="app/datatable/datatable.css" rel="stylesheet">
+    <link href="app/datatable/datatable.css" rel="stylesheet" />
+
+    <!-- barcode page -->
+    <script src="app/barcode/barcode.module.js"></script>
+    <script src="app/barcode/barcode.controllers.js"></script>
+    <script src="app/barcode/barcode.routes.js"></script>
+    <script src="app/barcode/barcode.services.js"></script>
+
   </head>
   <body ng-app="testing">
       <ion-nav-view></ion-nav-view>
