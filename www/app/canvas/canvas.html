@@ -1,0 +1,53 @@
+<ion-view title="Canvas">
+    <ion-nav-bar class="bar bar-positive">        
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+	
+    <ion-nav-buttons side="right">
+        <button class="button button-clear button-icon" ng-click="cc.clearCanvas();">
+            <i class="ion-ios-refresh-empty"></i>
+        </button>
+    </ion-nav-buttons>
+    <!-- 
+        http://www.williammalone.com/articles/create-html5-canvas-javascript-drawing-app/#demo-simple 
+        https://www.html5rocks.com/en/mobile/touch/
+    -->
+
+    <ion-content id="ionContent" scroll="true">
+        <ion-item class="text-center" ng-class="{'' : cc.scroll , 'no-scroll' : !cc.scroll}" >
+            <canvas 
+                id="canvasContainer"  
+                width="500"
+                height="500"
+            >
+<!--width="500"
+                height="500" -->
+            <!--on-tap="cc.mouseDown($event);"
+                on-drag="cc.mouseMove($event);"
+                on-release="cc.mouseLeave($event);"-->
+            
+            </canvas>
+            <!--cc.editCanvas();-->
+        </ion-item>
+        <button class="button button-block" ng-click="cc.scroll = !cc.scroll; cc.editCanvas();">
+            Edit
+        </button>
+        <ion-item>
+            <button class="button button-block" ng-click="cc.saveCanvasToImage();">
+                Save
+            </button>
+        </ion-item>
+
+        <ion-item ng-click="cc.check();">
+            <a ng-href="{{cc.imageHref}}" download="canvas.png" id="canvasDownload">
+                Download
+            </a>
+        </ion-item>
+
+        <ion-item ng-click="cc.canvas2image();">
+            canvas2image
+        </ion-item>
+
+        <img id="theImage" />
+    </ion-content>
+</ion-view>

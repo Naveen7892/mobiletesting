@@ -88,6 +88,19 @@ config.xml:
 	$ionicPlatform.ready(function() {
 	  $cordovaPlugin.someFunction().then(success, error);
 	});
+	
+	or
+	
+	// no $ionicPlatform DI is required
+	ionic.Platform.ready(function() {
+	  $cordovaPlugin.someFunction().then(success, error);
+	});
+	
+	or
+	
+	document.addEventListener("deviceready", function () {
+		$cordovaPlugin.someFunction().then(success, error);
+	});
 
 7. Add android platform 
 	(with internet)
@@ -113,3 +126,12 @@ config.xml:
 	
 	source: https://daneden.github.io/animate.css/
 	paste it in: www/css/
+	
+	
+	
+================== Other hints =================
+
+To print very lengthy string
+<ion-item class="item-text-wrap">
+        #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion 
+</ion-item>

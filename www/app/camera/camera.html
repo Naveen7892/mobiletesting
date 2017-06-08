@@ -1,0 +1,27 @@
+<ion-view title="Camera">
+    <ion-nav-bar class="bar bar-positive">        
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+	
+    <ion-content>
+        <ion-item ng-click="cc.getPicture();" class="item-text-wrap">
+            Get Picture
+        </ion-item>
+        <ion-item ng-click="cc.getPictureURI();" class="item-text-wrap">
+            Get Picture URI
+        </ion-item>
+        <ion-item ng-click="cc.getPictureFromPhotoLibrary();" class="item-text-wrap">
+            Get Picture from PhotoLibrary
+        </ion-item>
+        <ion-item ng-click="cc.getPictureFromSavedPhotoAlbum();" class="item-text-wrap">
+            Get Picture from SavedPhotoAlbum
+        </ion-item>
+
+        <div class="item item-text-wrap text-center">
+            <img id="image" style="min-width: 40vw; min-height: 40vh; max-width: 60vw; max-height: 60vh;" />
+        </div>
+
+        <div class="item item-text-wrap" id="imageLocation">
+        </div>
+    </ion-content>
+</ion-view>

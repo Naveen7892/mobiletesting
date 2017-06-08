@@ -29,6 +29,12 @@
     {
       "locator": "https://github.com/EddyVerbruggen/Toast-PhoneGap-Plugin.git",
       "id": "cordova-plugin-x-toast"
+    },
+    "cordova-plugin-inappbrowser",
+    "cordova-plugin-camera",
+    {
+      "locator": "https://github.com/katzer/cordova-plugin-email-composer.git",
+      "id": "cordova-plugin-email-composer"
     }
   ],
   "cordovaPlatforms": [

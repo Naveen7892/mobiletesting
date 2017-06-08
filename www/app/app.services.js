@@ -7,8 +7,8 @@
     .module('testing')
     .factory('startupFactory', startupFactory);
 
-  startupFactory.inject = ['$ionicPlatform', '$state', '$ionicHistory', '$cordovaToast', '$timeout'];
-  function startupFactory($ionicPlatform, $state, $ionicHistory, $cordovaToast, $timeout) {
+  startupFactory.inject = ['$ionicPlatform', '$state', '$ionicHistory', '$cordovaToast', '$timeout', '$rootScope'];
+  function startupFactory($ionicPlatform, $state, $ionicHistory, $cordovaToast, $timeout, $rootScope) {
 
     var globalObj = {};
     globalObj.isMobileEnv = true;

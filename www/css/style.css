@@ -1,1 +1,9 @@
 /* Empty. Add your own CSS if you like */
+
+i {
+    font-size: 30px;
+}
+
+.no-scroll{
+  pointer-events: none;
+}

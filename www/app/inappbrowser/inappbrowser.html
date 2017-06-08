@@ -1,0 +1,30 @@
+<ion-view title="In App Browser">
+    <ion-nav-bar class="bar bar-positive">        
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+	
+    <ion-content>
+        <ion-list>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">http://</span>
+                <input 
+                    placeholder="Enter URL" 
+                    ng-model="iab.browserURL"
+                    style="background: gray;"
+                >
+            </label>
+
+            <ion-item ng-click="iab.openBrowser1();">
+                Open Browser _blank
+            </ion-item>
+
+            <ion-item ng-click="iab.openBrowser2();">
+                Open Browser _self
+            </ion-item>
+
+            <ion-item ng-click="iab.openBrowser3();">
+                Open Browser _system
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

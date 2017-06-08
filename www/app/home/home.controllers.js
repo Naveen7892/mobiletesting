@@ -12,8 +12,8 @@
             activate();
 
             ////////////////
-
-            function activate() { }
-
+            function activate() {
+                
+            }
         }
 })();

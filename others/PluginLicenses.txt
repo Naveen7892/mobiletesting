@@ -1,0 +1,36 @@
+******************************** MIT ****************************
+=================================================================
+Support: Android (works in 4.2.2), iOS, Windows
+https://github.com/phonegap/phonegap-plugin-barcodescanner --save
+
+-------------------------------------------------------
+Support: Android 4.0, iOS
+https://github.com/wymsee/cordova-imagePicker --save
+
+-------------------------------------------------------
+Support: Android, iOS, windows
+https://github.com/phonegap/phonegap-plugin-push --save
+
+-------------------------------------------------------
+Support: iOS
+http://pbernasconi.github.io/cordova-progressIndicator/#license
+https://github.com/pbernasconi/cordova-progressIndicator/#license
+
+
+
+================================================================
+*************************** APACHE 2.0 *************************
+================================================================
+Support: Android 4.4 (works in 4.2.2), iOS 10
+https://github.com/apache/cordova-plugin-camera --save
+
+for iOS camera message
+cordova plugin add cordova-plugin-camera --variable CAMERA_USAGE_DESCRIPTION="your usage message" --variable PHOTOLIBRARY_USAGE_DESCRIPTION="your usage message"
+
+-------------------------------------------------------
+
+Support: Android, iOS, windows
+https://github.com/katzer/cordova-plugin-email-composer  --save
+
+
+-------------------------------------------------------
