@@ -1,0 +1,11 @@
+<ion-view title="Image modal">
+    <ion-nav-bar class="bar bar-positive">        
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+	
+    <ion-content>
+        <ion-list>
+            <img ng-repeat="image in imc.images" ng-src="{{image}}" ng-click="openImage(image, $event);" />
+        </ion-list>
+    </ion-content>
+</ion-view>

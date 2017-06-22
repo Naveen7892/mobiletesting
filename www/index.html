@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src * gap://ready file:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *; img-src 'self' data: file:; ">
+    
     <title></title>
 
     <link rel="manifest" href="manifest.json">
@@ -25,6 +28,9 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+    
+    <!-- push notification -->
+    <script src="lib/ionic.cloud.min.js"></script>
 
     <script src="lib/ngCordova/dist/ng-cordova.js"></script>
 
@@ -109,6 +115,21 @@
     <script src="app/canvas/canvas.services.js"></script>
 
     <script src="js/canvas2image.js"></script>
+
+    <!-- image modal -->
+    <script src="app/imagemodal/imagemodal.module.js"></script>
+    <script src="app/imagemodal/imagemodal.controllers.js"></script>
+    <script src="app/imagemodal/imagemodal.routes.js"></script>
+    <script src="app/imagemodal/imagemodal.services.js"></script>
+    <link href="app/imagemodal/imagemodal.css" rel="stylesheet" />
+
+    <!-- image modal -->
+    <script src="app/d3/d3/d3.min.js"></script>
+    <!--CDN: <script src="https://d3js.org/d3.v4.min.js"></script>-->
+    <script src="app/d3/d3.module.js"></script>
+    <script src="app/d3/d3.controllers.js"></script>
+    <script src="app/d3/d3.routes.js"></script>
+    <script src="app/d3/d3.services.js"></script>
 
   </head>
   <body ng-app="testing">

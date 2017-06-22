@@ -1,21 +1,21 @@
 (function() {
     'use strict';
 
-    angular.module('testing.imagepicker')
+    angular.module('testing.imagemodal')
     .config(configure)
 
     configure.$inject = ['$stateProvider'];
 
     function configure($stateProvider) {
         $stateProvider
-            .state('testing.imagepicker', {
-                url: '/imagepicker',
+            .state('testing.imagemodal', {
+                url: '/routes',
                 views: {
                     'testingContent': {
-                        templateUrl: 'app/imagepicker/imagepicker.html',
-                        controller: 'ImagePickerController as ipc'
+                        templateUrl: 'app/imagemodal/imagemodal.html',
+                        controller: 'ImageModalController as imc'
                     }
                 }
-            })
+            });
     }
 })();

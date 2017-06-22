@@ -135,3 +135,12 @@ To print very lengthy string
 <ion-item class="item-text-wrap">
         #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion #fashion 
 </ion-item>
+
+
+===================== BUGS ======================
+$cordovaImagePicker when run on 'ionic run android -lc'
+Not allowed to load local resource
+
+in iOS - splash screen not closing automatically, minimize and maximize works.
+in iOS - barcode scanner doesn't popup automatically, works only after scrolling from top/bottom.
+in iOS - in app browser doesn't show done/back button

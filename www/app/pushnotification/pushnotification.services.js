@@ -5,15 +5,37 @@
         .module('testing.pushnotification')
         .factory('PushNotificationService', PushNotificationService);
 
-    PushNotificationService.inject = [];
-    function PushNotificationService() {
+    PushNotificationService.inject = ['$q', '$ionicPush'];
+    function PushNotificationService($q, $ionicPush) {
         var service = {
-            exposedFn:exposedFn
+            registerPush: registerPushFn
         };
+
+        
         
         return service;
 
         ////////////////
-        function exposedFn() { }
+        function registerPushFn() { 
+            var q = $q.defer();
+
+            ionic.Platform.ready(function() {
+                console.log("Registering");
+                $ionicPush.register()
+                .then(
+                    function(t) {
+                        return $ionicPush.saveToken(t);
+                    }
+                )
+                .then(
+                    function(t) {
+                        console.log('Token saved:', t.token);
+                        q.resolve(t.token);
+                    }
+                );
+            });
+
+            return q.promise;
+        }
     }
 })();

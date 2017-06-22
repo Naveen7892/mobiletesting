@@ -2,25 +2,27 @@
 'use strict';
 
     angular
-        .module('testing.imagepicker')
-        .factory('ImagePickerService', ImagePickerService);
+        .module('testing.imagemodal')
+        .factory('ImageModalService', ImageModalService);
 
-    ImagePickerService.inject = ['$q', '$cordovaImagePicker'];
-    function ImagePickerService($q, $cordovaImagePicker) {
+    ImageModalService.inject = ['$q', '$cordovaImagePicker','ImagePickerService'];
+    function ImageModalService($q, $cordovaImagePicker, ImagePickerService) {
         var service = {
+            // openImagePicker: ImagePickerService.openImagePickerFn
             openImagePicker: openImagePickerFn
         };
-
+        
         var options = {
             maximumImagesCount: 5,
             width: 800,
             height: 800,
             quality: 80
         };
-        
+
         return service;
 
         ////////////////
+
         function openImagePickerFn() {
             var q = $q.defer();
 

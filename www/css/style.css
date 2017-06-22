@@ -7,3 +7,10 @@ i {
 .no-scroll{
   pointer-events: none;
 }
+
+img {
+  min-width: 80vw;
+  min-height: 80vh;
+  max-width: 80vw;
+  max-width: 80vh;
+}

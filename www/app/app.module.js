@@ -4,6 +4,7 @@
 
   angular.module('testing', [
     'ionic',
+    'ionic.cloud',
     'ngCordova',
     'testing.directives',
     'testing.sidemenu',
@@ -16,7 +17,9 @@
     'testing.emailcomposer',
     'testing.imagepicker',
     'testing.pushnotification',
-    'testing.canvas'
+    'testing.canvas',
+    'testing.imagemodal',
+    'testing.d3'
   ]);
 
 })();
