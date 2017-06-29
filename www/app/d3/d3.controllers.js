@@ -217,6 +217,226 @@
                     console.log(data[i].Age);
                 }
             });
-        }
+
+            // .csv (other ways)
+            d3.csv("/app/d3/data/employees.csv")
+            .get(function(data) {
+                    console.log(data);
+            });
+
+            d3.request("/app/d3/data/employees.csv")
+            .mimeType("text/csv")
+            .response(function (xhr) { 
+                return d3.csvParse(xhr.responseText); 
+            })
+            .get(function(data) {
+                console.log(data);
+            });
+            
+            // Use row parameter to convert representation of the data. For example, the following changes names to upper case
+            d3.csv("/app/d3/data/employees.csv")
+            .row(function(d) {
+                    return {
+                        age: d.Age,
+                        name: d.Name.toUpperCase() // converting name to upper case 
+                    }; 
+            })
+            .get(function(data) {
+                console.log(data);
+            });
+
+            // .json()
+            var testJSON = [{
+                "name": "John",
+                "age": 30,
+                "city": "New York"
+            },
+            {
+                "name": "Jane",
+                "age": 20,
+                "city": "San Francisco"
+            }];
+
+            // d3.json("/app/d3/data/users.json", function(data1) {
+            //     console.log(data1);
+            // });
+            // d3.json("/app/d3/data/users.json", function(data1) {
+            //     console.log(data1);
+            // });
+            // d3.request("/app/d3/data/users.json")
+            //     .mimeType("application/json")
+            //     .response(function(xhr) {
+            //         var res = JSON.parse(xhr.responseText);
+            //         console.log(res);
+            //         return res;
+            //     })
+            //     .get(function(data) {
+            //         console.log(data);
+            //     });
+
+            
+            // SVG bar chart with D3
+            var dataSVG = [5, 10, 12];
+
+            var width = 200,
+                scaleFactor = 10,
+                barHeight = 20;
+
+            var graphSVG = d3.select("#svgDemo2")
+                        .append("svg")
+                        .attr("width", width)
+                        .attr("height", barHeight * data.length)
+                        // .attr("id", "svgDemo2ID");
+                    
+            // console.log(graphSVG);
+            // console.log(graphSVG.select("#svgDemo2ID"));
+            // console.log(document.getElementById("svgDemo2ID"));
+            // document.getElementById("svgDemo2ID").append("HTMl");
+
+            var barSVG = graphSVG
+                        // .select("#svgDemoID")
+                        .selectAll("g")
+                        .data(dataSVG)
+                        .enter()
+                        .append("g")
+                        .attr("transform", function(d, i) {
+                            return "translate(0," + i * barHeight + ")";
+                        });
+
+            console.log(barSVG);
+
+            barSVG.append("rect")
+            .attr("width", function(d) {
+                return d * scaleFactor;
+            })
+            .attr("height", barHeight - 1)
+            .style("fill", "orange");
+
+            barSVG.append("text")
+            .attr("x", function(d) { return (d*scaleFactor); })
+            .attr("y", barHeight / 2)
+            .attr("dy", ".35em")
+            .text(function(d) { return d; })
+            .style("fill", "white")
+            .style("font", "10px sans-serif")
+            .style("text-anchor", "end");
+
+
+
+            // SVG Circle with text using D3
+            var widthCircle = 500;
+            var heightCircle = 500;
+
+            var dataCircle = [10, 15, 20, 25, 30];
+            var colorsCircle = ['#ffffcc','#c2e699','#78c679','#31a354','#006837'];
+
+            var svgCircle = d3.select("#svgDemoCircle")
+                        .append("svg")
+                        .attr("width", widthCircle)
+                        .attr("height", heightCircle);
+
+            var gCircle = svgCircle.selectAll("g")
+                        .data(dataCircle)
+                        .enter()
+                        .append("g")
+                        .attr("transform", function(d, i) {
+                            return "translate(0,0)";
+                        })
+
+            gCircle.append("circle")
+            .attr("cx", function(d, i) {
+                return i*100 + 50;
+            })
+            .attr("cy", function(d, i) {
+                return 100;
+            })
+            .attr("r", function(d) {
+                return d*1.5;
+            })
+            .attr("fill", function(d, i){
+                return colorsCircle[i];
+            });
+
+            gCircle.append("text")
+            .attr("x", function(d, i) {
+                return i * 100 + 40;
+            })
+            .attr("y", 105)
+            .attr("stroke", "teal")
+            .attr("font-size", "12px")
+            .attr("font-family", "sans-serif")
+            .text(function(d) {
+                return d;
+            });
+
+            // Bar chart with Scale
+            var dataScale = [100, 400, 300, 900, 850, 1000, 0]
+
+            var widthScale = 500,
+                barHeightScale = 20,
+                marginScale = 1;
+
+            var scaleScale = d3.scaleLinear()
+                        .domain([d3.min(dataScale), d3.max(dataScale)])
+                        .range([50, 500]);
+
+            var svgScale = d3.select("#svgDemoScale")
+                        .append("svg")
+                        .attr("width", widthScale)
+                        .attr("height", barHeightScale * dataScale.length);
+
+            var gScale = svgScale.selectAll("g")
+                        .data(dataScale)
+                        .enter()
+                        .append("g")
+                        .attr("transform", function (d, i) {
+                            return "translate(0," + i * barHeightScale + ")";
+                        });
+
+            gScale.append("rect")
+            .attr("width", function (d) {
+                return scaleScale(d);
+            })
+            .attr("height", barHeightScale - marginScale)
+            .style("fill", "orange");
+
+            gScale.append("text")
+            .attr("x", function (d) { return (scaleScale(d)); })
+            .attr("y", barHeightScale / 2)
+            .attr("dy", ".35em")
+            .text(function (d) { return d; })
+            .style("fill", "white")
+            .style("font", "10px sans-serif")
+            .style("text-anchor", "end");
+
+
+            // Axis with D3
+            var widthAxis = 400,
+                heightAxis = 100;
+
+            var dataAxis = [10, 15, 20, 25, 30];
+            
+            // Append SVG 
+            var svgAxis = d3.select("#svgDemoAxis")
+                        .append("svg")
+                        .attr("width", widthAxis)
+                        .attr("height", heightAxis);
+
+            // Create scale
+            var scaleAxis = d3.scaleLinear()
+                        .domain([d3.min(dataAxis), d3.max(dataAxis)])
+                        .range([0, widthAxis - 100]);
+
+            // Add scales to axis
+            var x_axisAxis = d3.axisBottom()
+                        .scale(scaleAxis);
+
+            //Append group and insert axis
+            svgAxis.append("g")
+            .call(x_axisAxis);
+
+
+
+        } // End of activate
     }
 })();
