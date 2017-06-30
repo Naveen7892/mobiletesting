@@ -435,7 +435,58 @@
             svgAxis.append("g")
             .call(x_axisAxis);
 
+            // PIE CHART WITH D3
 
+            // partstodo, being nested, being processed, done, in production, trouble, cam trouble(2)
+            // "#partsinnest": 15,
+            // "#partsinprocess": 31,
+            // "#qtydone": 4,
+            // "#partstodo": 10,
+            // "#partsinproduction": 12,
+            // "#partsintrouble2": 14,
+            // "#partsintrouble": 1,
+            // "#qtyordered": 86
+
+            // var dataPie = [4, 12, 31, 0, 1, 14, 10];
+            // var colorPie = d3.scaleOrdinal(['seagreen', 'lightgreen', 'thistle', 'steelblue', 'red', 'darkorange', 'yellow']);
+            var dataPie = [10, 15, 31, 4, 12, 1, 14];
+            var colorPie = d3.scaleOrdinal(['yellow', 'steelblue', 'thistle', 'seagreen', 'lightgreen', 'red', 'darkorange']);
+
+            // var dataPie = [2, 4, 8, 10];
+            // var colorPie = d3.scaleOrdinal(['#4daf4a','#377eb8','#ff7f00','#984ea3','#e41a1c']);
+
+
+            var elem = d3.select("#svgDemoPie");
+            var svgPie = elem.select("svg"),
+                widthPie = svgPie.attr("width"),
+                heightPie = svgPie.attr("height"),
+                radiusPie = Math.min(widthPie, heightPie) / 2,
+                gPie = svgPie.append("g").attr("transform", "translate(" + widthPie / 2 + "," + heightPie / 2 + ")");
+
+            // Generate the pie
+            var piePie = d3.pie().sort(null);
+
+            // Generate the arcs
+            var arcPie = d3.arc()
+                        .innerRadius(0)
+                        .outerRadius(radiusPie)
+                        
+                        .startAngle(function(d) { return d.startAngle + Math.PI/2; })
+                        .endAngle(function(d) { return d.endAngle + Math.PI/2; });
+
+            //Generate groups
+            var arcsPie = gPie.selectAll("arc")
+                        .data(piePie(dataPie))
+                        .enter()
+                        .append("g")
+                        .attr("class", "arc")
+
+            //Draw arc paths
+            arcsPie.append("path")
+                .attr("fill", function(d, i) {
+                    return colorPie(i);
+                })
+                .attr("d", arcPie);
 
         } // End of activate
     }
