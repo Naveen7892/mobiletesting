@@ -1,0 +1,6 @@
+Calendar (events)
+Admob
+Google analytics
+geolocation
+flashlight
+launch navigator

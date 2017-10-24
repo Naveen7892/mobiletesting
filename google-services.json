@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "834943306017",
+    "firebase_url": "https://free-push-test.firebaseio.com",
+    "project_id": "free-push-test",
+    "storage_bucket": "free-push-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834943306017:android:af9952593ac6e1d0",
+        "android_client_info": {
+          "package_name": "com.naveentere7.mobiletesting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "834943306017-fa1g0dg23b9meph9eidan6krgv3pmrcd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwDGe49OlpYPtohikVVmDjsU3GLTJtKs8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

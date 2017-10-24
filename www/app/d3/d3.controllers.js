@@ -488,6 +488,35 @@
                 })
                 .attr("d", arcPie);
 
+
+            // STACKED BAR CHART
+
+            var datavars = [224, 84, 29, 3];
+            var colors = ['green','blue','darkgray','#606060'];
+            
+            var svg = d3.select('#stackedBarChart')
+            .append('svg')
+            .attr('width', 500)
+            .attr('height', 100);
+            
+            svg.selectAll('rect')
+            .data(datavars)
+            .enter()
+            .append('rect')
+            .attr('width', function(d){
+                return d;})
+                           .attr('x',function(d, i){
+                           return sum(datavars, 0, i); })
+            .attr('fill', function(d, i){ return colors[i]; })
+            .attr('y',0)
+            .attr('height', 30);
+            
+            function sum(array, start, end) {
+                var total = 0;
+                for(var i=start; i<end; i++) total += array[i];
+              return total;
+            }
+
         } // End of activate
     }
 })();
