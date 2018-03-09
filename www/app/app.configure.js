@@ -8,7 +8,7 @@
     function configure($urlRouterProvider, $ionicConfigProvider, $compileProvider, $ionicCloudProvider) {
 
         $ionicConfigProvider.views.transition('none');
-        $ionicConfigProvider.views.maxCache(15);
+        $ionicConfigProvider.views.maxCache(0);
         $ionicConfigProvider.views.forwardCache(true);
         $ionicConfigProvider.views.swipeBackEnabled(false);
 

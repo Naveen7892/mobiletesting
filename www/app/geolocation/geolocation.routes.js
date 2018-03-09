@@ -1,19 +1,19 @@
 (function() {
     'use strict';
 
-    angular.module('testing.imagemodal')
+    angular.module('testing.geolocation')
     .config(configure)
 
     configure.$inject = ['$stateProvider'];
 
     function configure($stateProvider) {
         $stateProvider
-            .state('testing.imagemodal', {
-                url: '/imagemodal',
+            .state('testing.geolocation', {
+                url: '/geolocation',
                 views: {
                     'testingContent': {
-                        templateUrl: 'app/imagemodal/imagemodal.html',
-                        controller: 'ImageModalController as imc'
+                        templateUrl: 'app/geolocation/geolocation.html',
+                        controller: 'GeolocationController as gc'
                     }
                 }
             });

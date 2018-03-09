@@ -19,7 +19,8 @@
     'testing.pushnotification',
     'testing.canvas',
     'testing.imagemodal',
-    'testing.d3'
+    'testing.d3',
+    'testing.geolocation'
   ]);
 
 })();
