@@ -1,4 +1,9 @@
 {
-  "name": "Mobile Plugins",
-  "app_id": "ff959a3d"
+  "name": "Ionic App Testing",
+  "app_id": "ff959a3d",
+  "integrations": {
+    "cordova": {},
+    "gulp": {}
+  },
+  "type": "ionic1"
 }

@@ -8,3 +8,8 @@ plugins/
 hooks/
 .vscode/
 resources/android/
+resources/ios/
+
+node_modules-old/
+platforms-old/
+plugins-old/

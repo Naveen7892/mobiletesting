@@ -10,6 +10,7 @@
         $ionicPlatform.ready(function() {
 
             // Test FCM's PUSH NOTIFICATION
+            /*
             $timeout(function() {
 
                 //FCMPlugin.onTokenRefresh( onTokenRefreshCallback(token) ); 
@@ -37,6 +38,7 @@
                 });
             }, 3000);
 
+            */
 
             if(window.cordova && window.cordova.plugins.Keyboard) {
                 // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
